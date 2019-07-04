@@ -3,6 +3,14 @@ FROM node:latest
 #Create app directory
 WORKDIR /usr/src/app
 
-EXPOSE 8080
+COPY . ./
 
-RUN npm start
+RUN npm install gulp -g
+
+EXPOSE 5000
+
+RUN npm install 
+
+
+
+RUN gulp startServer
