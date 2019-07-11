@@ -84,7 +84,7 @@ exports.startServer = startServer
  * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
  */
 var build = gulp.parallel(style, watch, startServer);
- 
+var compileSass = gulp.parallel(style, watch); 
 /*
  * You can still use `gulp.task` to expose tasks
  */
@@ -94,3 +94,4 @@ var build = gulp.parallel(style, watch, startServer);
  * Define default task that can be called by just running `gulp` from cli
  */
 gulp.task('default', build);
+gulp.task('watchSass', compileSass);
