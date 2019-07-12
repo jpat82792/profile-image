@@ -38,7 +38,7 @@ function reload() {
 }
 
 function startServer(){
-  execServer('node bin/www', function (err, stdout, stderr) {
+  execServer('npm run start', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
