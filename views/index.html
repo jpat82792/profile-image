@@ -5,18 +5,32 @@
 	</head>
 	<body>
 		<section class="jpte-profile-image">
-			<button class="btn help-btn">?</button>
-			<h1 class="guiding-header"></h1>
-      <section>
+			<button class="btn help-btn" role="button" aria-label="help">
+        <img src="" alt="Help">
+      </button>
+			<h1 class="guiding-header" role="banner status">
+        
+      </h1>
+      <section class="image-pane" role="group">
         <div class="image-editor">
           <div class="image-display-container">
-            <canvas class="image-display"></canvas>
+            <canvas class="image-display" role="application" aria-label="Image cropper"
+            aria-label="Image cropper" aria-roledescription="Sample instructions on how to use">
+              
+            </canvas>
           </div>
-          <div class="action-btn-container">
-            <button class="btn action-btn"></button>
+          <div class="image-preview" role="status" aria-label="Profile image preview">
           </div>
         </div>
-        <div class="image-preview">
+      </section>
+      <section class="action-pane" role="group" aria-label>
+        <div class="zoom-container">
+          <input type="range" min="1" max="100" value="50" class="zoom-slider" 
+          id="jpte-profile-image-zoom-slider" role="slider" aria-label="Slider to change zoom on photo"/>
+        </div>
+        <div class="action-button-container">
+          <button class="jpte-profile-image-button" aria-label="Cancel">Cancel</button>
+          <button class="jpte-profile-image-button" aria-label="Upload from your computer">Upload from your computer</button>
         </div>
       </section>
 		</section>
