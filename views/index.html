@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
 	<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+    <script src="javascripts/jpte-profile-image.js"></script>
 	</head>
 	<body>
 		<section class="jpte-profile-image">
-			<button class="btn help-btn" role="button" aria-label="help">
-        <img src="" alt="Help">
-      </button>
+      <div class="container help-button-container">
+			 <button class="btn help-button" role="button" aria-label="help">
+         <span class="fas fa-question"></span>
+       </button>
+      </div>
 			<h1 class="guiding-header" role="banner status">
-        
+        Upload a photo
       </h1>
       <section class="image-pane" role="group">
-        <div class="image-editor">
-          <div class="image-display-container">
-            <canvas class="image-display" role="application" aria-label="Image cropper"
-            aria-label="Image cropper" aria-roledescription="Sample instructions on how to use">
-              
-            </canvas>
-          </div>
+        <div class="container image-editor-container">
+          <canvas class="image-editor" role="application" aria-label="Image cropper"
+          aria-label="Image cropper" aria-roledescription="Sample instructions on how to use">
+          </canvas>
           <div class="image-preview" role="status" aria-label="Profile image preview">
           </div>
         </div>
       </section>
       <section class="action-pane" role="group" aria-label>
-        <div class="zoom-container">
+        <div class="container zoom-container">
+          <div class="zoom-out-icon" role="img" aria-label="Zoom out icon"></div>
           <input type="range" min="1" max="100" value="50" class="zoom-slider" 
           id="jpte-profile-image-zoom-slider" role="slider" aria-label="Slider to change zoom on photo"/>
+          <div class="zoom-in-icon" role="img" aria-label="Zoom in icon"></div>
         </div>
-        <div class="action-button-container">
-          <button class="jpte-profile-image-button" aria-label="Cancel">Cancel</button>
-          <button class="jpte-profile-image-button" aria-label="Upload from your computer">Upload from your computer</button>
+        <div class="container action-button-container">
+          <button class="back-button" aria-label="Cancel">Cancel</button>
+          <button class="forward-button" aria-label="Upload from your computer">
+            Upload from your computer
+          </button>
         </div>
       </section>
 		</section>
