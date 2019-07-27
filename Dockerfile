@@ -7,6 +7,4 @@ COPY . ./
 
 RUN npm install gulp -g
 
-EXPOSE 5000
-
 RUN npm install 
