@@ -1,5 +1,139 @@
-$font-size-header: 72px;
+$font-size-header: 14px;
 
-*{
+/*
+Colors
+*/
+$active-button-color:#007FFF;
+$inactive-pane-color:#E8E8E8;
+$inactive-button-color:rgba(0,127,255,.25);
+$black-font-color: #333;
+$inactive-widget-color: rgba(194,194,194,.25);
+$active-widget-color: #C2C2C2;
+$cancel-button-border-color: #999;
+
+/*image-preview*/
+$preview-side: 90px;
+$preview-radius: $preview-side/2;
+
+/*image-editor*/
+$editor-side:360px;
+$editor-radius: $editor-side/2;
+
+/*h1 variables*/
+$h1-font-size:26px;
+$h1-font-color:#333;
+
+/*zoom icon variables*/
+$zoom-in-side:60px;
+$zoom-in-radius: $zoom-in-side/2;
+$zoom-out-side: 30px;
+$zoom-out-radius: $zoom-out-side/2;
+
+.jpte-profile-image{
+
+	width:560px;
+	display:block;
+	margin:0px auto;
+	text-align:center;
+
+	*{
 	 font-size: $font-size-header;
+	 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	 color: $black-font-color;
+	}
+
+	h1{
+
+	}
+
+	.guiding-header{
+		font-size:26px;
+		text-align:center;
+	}
+
+	button{
+		font-size: 18px;
+		border: transparent;
+		outline: none;
+		border-radius: 2px;
+		padding: 15px 25px;
+	}
+
+	.forward-button{
+		background-color: $active-button-color;
+		color: white;
+	}
+
+	.back-button{
+		border: 1px solid $cancel-button-border-color;
+	}
+
+	.base-pane{
+		background-color: $inactive-pane-color;
+		float:left;
+	}
+
+	.image-preview{
+		@extend .base-pane;
+	    width: $preview-side;
+	    height:$preview-side;
+	    border-radius: $preview-radius;
+	    lign-self: baseline;
+    	margin-left: auto;
+	}
+
+	.image-editor{
+		@extend .base-pane;
+		width: 360px;
+    	height: 360px;
+    	margin-left: auto;
+    	justify-self: center;
+    	align-self: center;
+
+	}
+
+	.zoom-container{
+		text-align:center;
+		width:100%;
+	}
+
+
+	.zoom-icon{
+		background-color:$inactive-pane-color;
+		display:inline-block;
+	}
+
+	.zoom-in-icon{
+		@extend .zoom-icon;
+		width:$zoom-in-side;
+		height:$zoom-in-side;
+		border-radius:$zoom-in-radius;
+	}
+
+	.zoom-out-icon{
+		@extend .zoom-icon;
+		width:$zoom-out-side;
+		height:$zoom-out-side;
+		border-radius:$zoom-out-radius;
+	}
+
+	.container{
+		float:left;
+		text-align:center;
+		width:100%;
+	}
+
+	.help-button-container{
+		text-align:left;
+	}
+
+	.help-button{
+
+	}
+
+	.image-editor-container{
+	    display: flex;
+    	flex-direction: row;
+	}
+
 }
