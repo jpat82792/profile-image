@@ -1,3 +1,4 @@
+cd ../..
 export projectDirectory=pwd
 echo "Build web server image"
 docker-compose build web
