@@ -31,8 +31,20 @@ function style() {
 function reload() {
     browserSync.reload();
 }
+/*
+Fixes issues with node sass being out of sync with
+container dependencies by forcing a rebuild.
+*/
+function rebuildDependencies(){
+      execServer('npm install --save', (err, stdout, stderr)=>{
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+      });
+}
 
 function startServer(){
+  rebuildDependencies();
   execServer('npm run start', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
