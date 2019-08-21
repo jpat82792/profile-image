@@ -39,7 +39,7 @@ function rebuildDependencies(){
       execServer('npm install --save', (err, stdout, stderr)=>{
         console.log(stdout);
         console.log(stderr);
-        cb(err);
+        //cb(err);
       });
 }
 
@@ -48,7 +48,7 @@ function startServer(){
   execServer('npm run start', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
-    cb(err);
+    //cb(err);
   });
   
 }
