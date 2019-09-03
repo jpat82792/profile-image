@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon bin/www",
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -31,6 +31,7 @@
     "lodash.template": ">=4.5.0",
     "nock": "^10.0.6",
     "node-sass": "^4.12.0",
+    "rewire": "^4.0.1",
     "supertest": "^4.0.2"
   }
 }
