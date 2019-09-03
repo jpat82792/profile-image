@@ -1,28 +1,41 @@
-let selectedFile;
+let performClick = (queryString) => {
+   var elem = document.querySelector(queryString);
+   if(elem && document.createEvent) {
+      var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click", true, false);
+      elem.dispatchEvent(evt);
+   }
+}
+
+let setForwardActionButton = () =>{
+  document.querySelector('#forward-button').addEventListener("click", ()=>{
+    performClick('#file-uploader');
+  });
+}
+
 let bindToDomUploadButton = () =>
 {
-	openHiddenFileBrowserInput()
-		.addEventListener("click", (e)=>{
-			openUploadFileBrowser();
-		});	
+  setForwardActionButton();	
 };
 
 let openUploadFileBrowser = () =>
 {
-	openHiddenFileBrowserInput();
+  openHiddenFileBrowserInput();
 };
 
 let getResultFromFileBrowser = () =>
 {
-	document.querySelector('#file-uploader').files
+  document.querySelector('#file-uploader').files
 };
 
-let openHiddenFileBrowserInput = ()=>
+let getHiddenFileBrowserInput = () =>
 {
-	let hiddenFileBrowserInput = document.querySelector('#file-uploader');
-	hiddenFileBrowserInput.click();
-}
+  return document.querySelector('#file-uploader');
+};
 
-window.onload = () =>{
-	bindToDomUploadButton();
-}
+window.onload = () =>
+{
+  bindToDomUploadButton();
+};
+
+module.exports = {getHiddenFileBrowserInput : getHiddenFileBrowserInput};
