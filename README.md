@@ -38,3 +38,12 @@ operating systems.
 	</ol>
 	Whenever you restart developing, you will only need do step 3.
 </details>
+<h2>Start developing</h2>
+<p>
+Navigate to the start developing scripts and run the one for your environment.
+</p>
+<p>
+<b>IMPORTANT:</b> If your start developing script is failing on linux you may need to run the following series of commands:
+ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+ <a href="https://github.com/facebook/jest/issues/3254">Reference</a>
+</p>
