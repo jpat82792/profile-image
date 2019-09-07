@@ -17,10 +17,10 @@
       </h1>
       <section class="image-pane" role="group">
         <div class="container image-editor-container">
-          <canvas class="image-editor" role="application" aria-label="Image cropper"
+          <canvas id="image-editor" class="image-editor" role="application" aria-label="Image cropper"
           aria-label="Image cropper" aria-roledescription="Sample instructions on how to use">
           </canvas>
-          <div class="image-preview" role="status" aria-label="Profile image preview">
+          <div id="image-preview" class="image-preview" role="status" aria-label="Profile image preview">
           </div>
         </div>
       </section>
@@ -40,7 +40,8 @@
         </div>
       </section>
 		</section>
-	</body>
-      <script src="javascript/util.js" type="text/javascript"></script>
-      <script src="javascript/uploadButton.js" type="text/javascript"></script>
+  </body>
+      <script src="javascript/canvas.js" type="module"></script>
+      <script src="javascript/imageEditor.js" type="module"></script>
+      <script src="javascript/uploadButton.js" type="module"></script>
 </html>
