@@ -1,3 +1,6 @@
+import imageEditor from './imageEditor.js';
+import canvasWrapper from './canvas.js';
+
 let performClick = (queryString) => {
    var elem = document.querySelector(queryString);
    if(elem && document.createEvent) {
@@ -33,9 +36,24 @@ let getHiddenFileBrowserInput = () =>
   return document.querySelector('#file-uploader');
 };
 
+let setCanvasImage = (imageUrl) =>{
+  canvasWrapper.canvasImage.src = imageUrl;
+  canvasWrapper.canvasImage.onload = () =>{
+    imageEditor.setImageEditorListeners();
+    canvasWrapper.drawCanvas(0,0);
+  }
+
+}
+
+let loadImage = () =>{
+  let imageUrl = window.URL.createObjectURL(getHiddenFileBrowserInput().files[0]);
+  setCanvasImage( imageUrl);
+}
+
 window.onload = () =>
 {
   bindToDomUploadButton();
+  getHiddenFileBrowserInput().addEventListener("input", () => {
+    loadImage();
+  });
 };
-
-module.exports = {getHiddenFileBrowserInput : getHiddenFileBrowserInput};
