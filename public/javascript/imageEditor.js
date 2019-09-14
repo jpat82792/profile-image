@@ -70,7 +70,10 @@ let getMousePositionScalingFactors = (rect) =>{
       x : canvasWrapper.getImageCanvas().width / rect.width,
       y : canvasWrapper.getImageCanvas().height / rect.height
   }
-
 }
 
-export default {setImageEditorListeners};
+let getImagePosition = () =>{
+  return imagePosition;
+}
+
+export default {setImageEditorListeners, getImagePosition};
