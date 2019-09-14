@@ -17,7 +17,7 @@
       </h1>
       <section class="image-pane" role="group">
         <div class="container image-editor-container">
-          <canvas id="image-editor" class="image-editor" role="application" aria-label="Image cropper"
+          <canvas width="360" height="360" id="image-editor" class="image-editor" role="application" aria-label="Image cropper"
           aria-label="Image cropper" aria-roledescription="Sample instructions on how to use">
           </canvas>
           <div id="image-preview" class="image-preview" role="status" aria-label="Profile image preview">
@@ -27,8 +27,9 @@
       <section class="action-pane" role="group" aria-label>
         <div class="container zoom-container">
           <div class="zoom-out-icon" role="img" aria-label="Zoom out icon"></div>
-          <input type="range" min="1" max="100" value="50" class="zoom-slider" 
-          id="jpte-profile-image-zoom-slider" role="slider" aria-label="Slider to change zoom on photo"/>
+          <input type="range" min="1" step="0.01" value="1"  max="2" class="zoom-slider" 
+          id="zoom-slider" role="slider" aria-label="Slider to change zoom on photo"
+          />
           <div class="zoom-in-icon" role="img" aria-label="Zoom in icon"></div>
         </div>
         <div class="container action-button-container">
@@ -41,6 +42,7 @@
       </section>
 		</section>
   </body>
+      <script src="javascript/zoomSlider.js" type="module"></script>
       <script src="javascript/canvas.js" type="module"></script>
       <script src="javascript/imageEditor.js" type="module"></script>
       <script src="javascript/uploadButton.js" type="module"></script>

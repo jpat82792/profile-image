@@ -1,3 +1,4 @@
+import zoomSlider from './zoomSlider.js';
 
 let canvasImage = new Image();
 
@@ -7,8 +8,9 @@ const drawCanvas = (xCoordinate, yCoordinate) =>{
 }
 
 let drawNextFrame = ( xCoordinate, yCoordinate) =>{
-  getCanvasContext().save();
-  getCanvasContext().drawImage(canvasImage,xCoordinate,yCoordinate);
+  getCanvasContext().drawImage(canvasImage,xCoordinate,yCoordinate,
+    (canvasImage.width *zoomSlider.getScaleValue()), 
+    (canvasImage.height * zoomSlider.getScaleValue()));
   getCanvasContext().save();
 }
 
