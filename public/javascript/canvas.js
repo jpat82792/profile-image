@@ -27,5 +27,8 @@ let getCanvasContext = () =>{
   
   return getImageCanvas().getContext("2d");
 }
+let getCanvasImage = () =>{
+  return canvasImage;
+}
 
-export default {drawCanvas, getImageCanvas, canvasImage, getCanvasContext}
+export default {drawCanvas, getImageCanvas, canvasImage, getCanvasContext, getCanvasImage}

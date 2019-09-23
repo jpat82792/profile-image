@@ -1,5 +1,6 @@
 import imageEditor from './imageEditor.js';
 import canvasWrapper from './canvas.js';
+import imageLoadingUtilities from './imageLoadingUtilities.js';
 
 let performClick = (queryString) => {
    var elem = document.querySelector(queryString);
@@ -40,9 +41,11 @@ let setCanvasImage = (imageUrl) =>{
   canvasWrapper.canvasImage.src = imageUrl;
   canvasWrapper.canvasImage.onload = () =>{
     imageEditor.setImageEditorListeners();
+    if(imageLoadingUtilities.imageIsLargerThanCanvas()){
+      imageLoadingUtilities.scaleImageToFitOntoCanvas();
+    }
     canvasWrapper.drawCanvas(0,0);
   }
-
 }
 
 let loadImage = () =>{
