@@ -1,3 +1,4 @@
+'use strict';
 import canvasWrapper from './canvas.js';
 
 let imageWidth;

@@ -1,3 +1,4 @@
+'use strict';
 import canvasWrapper from './canvas.js';
 import imageEditor from './imageEditor.js';
 const scaleOffset = 1;

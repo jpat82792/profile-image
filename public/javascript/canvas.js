@@ -1,3 +1,4 @@
+'use strict';
 import zoomSlider from './zoomSlider.js';
 
 let canvasImage = new Image();

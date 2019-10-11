@@ -1,3 +1,4 @@
+'use strict';
 import canvasWrapper from './canvas.js';
 
 const imageStartPosition = {left:0, top:0};

@@ -1,3 +1,4 @@
+'use strict';
 import imageEditor from './imageEditor.js';
 import canvasWrapper from './canvas.js';
 import imageLoadingUtilities from './imageLoadingUtilities.js';
@@ -53,10 +54,5 @@ let loadImage = () =>{
   setCanvasImage( imageUrl);
 }
 
-window.onload = () =>
-{
-  bindToDomUploadButton();
-  getHiddenFileBrowserInput().addEventListener("input", () => {
-    loadImage();
-  });
-};
+
+export default {getHiddenFileBrowserInput, loadImage, bindToDomUploadButton}
