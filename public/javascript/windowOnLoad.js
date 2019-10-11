@@ -1,5 +1,5 @@
 'use strict';
-import uploadButton from './uploadButton.js';
+import uploadButton from './forwardButton.js';
 import screenTransitionController from './screenTransitionController.js';
 
 window.onload = () =>{
