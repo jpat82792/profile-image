@@ -2,6 +2,7 @@
 import imageEditor from './imageEditor.js';
 import canvasWrapper from './canvas.js';
 import imageLoadingUtilities from './imageLoadingUtilities.js';
+import screenTransitionController from './screenTransitionController.js';
 
 let performClick = (queryString) => {
    var elem = document.querySelector(queryString);
@@ -12,8 +13,12 @@ let performClick = (queryString) => {
    }
 }
 
+let getForwardActionButton = () =>{
+  return document.querySelector('#forward-button');
+}
+
 let setForwardActionButton = () =>{
-  document.querySelector('#forward-button').addEventListener("click", ()=>{
+  getForwardActionButton().addEventListener("click", ()=>{
     performClick('#file-uploader');
   });
 }
@@ -40,13 +45,7 @@ let getHiddenFileBrowserInput = () =>
 
 let setCanvasImage = (imageUrl) =>{
   canvasWrapper.canvasImage.src = imageUrl;
-  canvasWrapper.canvasImage.onload = () =>{
-    imageEditor.setImageEditorListeners();
-    if(imageLoadingUtilities.imageIsLargerThanCanvas()){
-      imageLoadingUtilities.scaleImageToFitOntoCanvas();
-    }
-    canvasWrapper.drawCanvas(0,0);
-  }
+
 }
 
 let loadImage = () =>{
@@ -54,5 +53,18 @@ let loadImage = () =>{
   setCanvasImage( imageUrl);
 }
 
+let changeForwardActionButtonText = (buttonText) =>{
+  getForwardActionButton().textContent = buttonText;
+}
 
-export default {getHiddenFileBrowserInput, loadImage, bindToDomUploadButton}
+canvasWrapper.canvasImage.onload = ()=>{
+  imageEditor.setImageEditorListeners();
+  if(imageLoadingUtilities.imageIsLargerThanCanvas()){
+    imageLoadingUtilities.scaleImageToFitOntoCanvas();
+  }
+  canvasWrapper.drawCanvas(0,0);
+  screenTransitionController.setScreenToSave()
+}
+
+
+export default {getHiddenFileBrowserInput, loadImage, bindToDomUploadButton, changeForwardActionButtonText}
