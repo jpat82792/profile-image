@@ -1,5 +1,7 @@
 'use strict';
-import uploadButton from './uploadButton.js';
+import uploadButton from './forwardButton.js';
+import backButton from './backButton.js';
+import textConstants from './textConstants.js';
 
 const setScreenToLoading = () =>{
   console.log("setScreenToLoading");
@@ -7,10 +9,14 @@ const setScreenToLoading = () =>{
 
 const setScreenToSave = () =>{
   console.log("setScreenToSave");
+  uploadButton.changeForwardActionButtonText(textConstants.forwardButtonTextPhoto);
+  backButton.showBackButton();
 }
 
 const setScreenToUploadPrompt = () => {
   console.log('setScreenToUploadPrompt');
+  uploadButton.changeForwardActionButtonText(textConstants.forwardButtonTextPhoto);
+  backButton.hideBackButton();
 }
 
-export default {setScreenToSave}
+export default {setScreenToSave, setScreenToUploadPrompt}
