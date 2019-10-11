@@ -78,7 +78,7 @@ $zoom-out-radius: $zoom-out-side/2;
 	    width: $preview-side;
 	    height:$preview-side;
 	    border-radius: $preview-radius;
-	    lign-self: baseline;
+	    align-self: baseline;
     	margin-left: auto;
 	}
 
@@ -135,5 +135,10 @@ $zoom-out-radius: $zoom-out-side/2;
 	    display: flex;
     	flex-direction: row;
 	}
+
+	.hide-button{
+		display:none;
+	}
+
 
 }
