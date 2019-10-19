@@ -1,6 +1,9 @@
+'use strict';
 import imageEditor from './imageEditor.js';
 import canvasWrapper from './canvas.js';
 import imageLoadingUtilities from './imageLoadingUtilities.js';
+import screenTransitionController from './screenTransitionController.js';
+import zoomSlider from './zoomSlider.js';
 
 let performClick = (queryString) => {
    var elem = document.querySelector(queryString);
@@ -11,8 +14,12 @@ let performClick = (queryString) => {
    }
 }
 
+let getForwardActionButton = () =>{
+  return document.querySelector('#forward-button');
+}
+
 let setForwardActionButton = () =>{
-  document.querySelector('#forward-button').addEventListener("click", ()=>{
+  getForwardActionButton().addEventListener("click", ()=>{
     performClick('#file-uploader');
   });
 }
@@ -39,24 +46,32 @@ let getHiddenFileBrowserInput = () =>
 
 let setCanvasImage = (imageUrl) =>{
   canvasWrapper.canvasImage.src = imageUrl;
-  canvasWrapper.canvasImage.onload = () =>{
-    imageEditor.setImageEditorListeners();
-    if(imageLoadingUtilities.imageIsLargerThanCanvas()){
-      imageLoadingUtilities.scaleImageToFitOntoCanvas();
-    }
-    canvasWrapper.drawCanvas(0,0);
+
+}
+let tryToLoadImage = () =>{
+  try{
+    loadImage();
+  }
+  catch(error){
+    /*console.error(error);*/
   }
 }
-
 let loadImage = () =>{
   let imageUrl = window.URL.createObjectURL(getHiddenFileBrowserInput().files[0]);
   setCanvasImage( imageUrl);
 }
 
-window.onload = () =>
-{
-  bindToDomUploadButton();
-  getHiddenFileBrowserInput().addEventListener("input", () => {
-    loadImage();
-  });
-};
+let changeForwardActionButtonText = (buttonText) =>{
+  getForwardActionButton().textContent = buttonText;
+}
+
+canvasWrapper.getCanvasImage().onload = ()=>{
+  imageLoadingUtilities.imageDimensionReset();
+  imageEditor.setImageEditorListeners();
+  imageLoadingUtilities.scaleImageIfNeeded();
+  canvasWrapper.drawCanvas(0,0);
+  screenTransitionController.setScreenToSave()
+}
+
+
+export default {getHiddenFileBrowserInput, tryToLoadImage, bindToDomUploadButton, changeForwardActionButtonText}

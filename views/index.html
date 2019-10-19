@@ -33,18 +33,32 @@
           <div class="zoom-in-icon" role="img" aria-label="Zoom in icon"></div>
         </div>
         <div class="container action-button-container">
-          <button class="back-button" aria-label="Cancel">Cancel</button>
-          <button class="forward-button" id="forward-button" aria-label="Upload from your computer">
-            Upload from your computer
-          </button>
-          <input id="file-uploader" type="file" style="display:none;"/>
+          <table style="width:100%;table-layout: fixed;
+          border-collapse: collapse;">
+            <tr>
+              <td id="back-button-container" class="hide-button">
+                  <button style="width:100%;" id="back-button" class="back-button" aria-label="Cancel">Cancel</button>
+              </td>
+              <td >
+                <button style="width:100%;" class="forward-button" id="forward-button" aria-label="Upload from your computer">
+                    Upload from your computer
+                </button>
+              </td>
+
+
+              <input id="file-uploader" type="file" style="display:none;"/>
+            </tr>
+          </table>
+
         </div>
       </section>
 		</section>
   </body>
+      <script src="javascript/windowOnLoad.js" type="module"></script>
+      <script src="javascript/screenTransitionController.js" type="module"></script>
       <script src="javascript/imageLoadingUtilities.js" type="module"></script>
       <script src="javascript/zoomSlider.js" type="module"></script>
       <script src="javascript/canvas.js" type="module"></script>
       <script src="javascript/imageEditor.js" type="module"></script>
-      <script src="javascript/uploadButton.js" type="module"></script>
+      <script src="javascript/forwardButton.js" type="module"></script>
 </html>

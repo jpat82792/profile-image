@@ -1,3 +1,4 @@
+'use strict';
 import canvasWrapper from './canvas.js';
 import imageEditor from './imageEditor.js';
 const scaleOffset = 1;
@@ -9,13 +10,16 @@ let getZoomSlider = () =>{
 }
 
 let zoomBasedOnSlider = (slider) =>{
-  scaleValue = slider.value;
+  setScaleValue(slider.value);
   canvasWrapper.drawCanvas(imageEditor.getImagePosition().left, imageEditor.getImagePosition().top);
 }
 let getScaleValue = () =>{
   return scaleValue;
 }
+let setScaleValue = (value) =>{
+  scaleValue = value;
+}
 
 getZoomSlider().oninput = () =>{zoomBasedOnSlider(getZoomSlider());};
 
-export default {zoomBasedOnSlider, getZoomSlider, getScaleValue}
+export default {zoomBasedOnSlider, getZoomSlider, getScaleValue, setScaleValue}
