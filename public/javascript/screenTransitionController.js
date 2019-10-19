@@ -2,6 +2,7 @@
 import uploadButton from './forwardButton.js';
 import backButton from './backButton.js';
 import textConstants from './textConstants.js';
+import canvas from './canvas.js';
 
 const setScreenToLoading = () =>{
   console.log("setScreenToLoading");
@@ -15,8 +16,9 @@ const setScreenToSave = () =>{
 
 const setScreenToUploadPrompt = () => {
   console.log('setScreenToUploadPrompt');
-  uploadButton.changeForwardActionButtonText(textConstants.forwardButtonTextPhoto);
+  uploadButton.changeForwardActionButtonText(textConstants.forwardButtonTextNoPhoto);
   backButton.hideBackButton();
+  canvas.resetCanvas();
 }
 
 export default {setScreenToSave, setScreenToUploadPrompt}

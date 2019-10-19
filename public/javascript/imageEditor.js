@@ -20,7 +20,6 @@ let setImageEditorListeners = () =>{
 
 let onMouseDown = (event) =>{
   let mousePosition = getMousePosition(event);
-
   setPositions(mousePosition, mousePosition);
   canvasWrapper.drawCanvas(imagePosition.left, imagePosition.top);
   isClicked = true;
@@ -29,7 +28,6 @@ let onMouseDown = (event) =>{
 let onMouseMove = (event)=>{
   if(isClicked){
       let mousePosition = getMousePosition(event);
-
       setPositions(imagePosition, mousePosition);
       canvasWrapper.drawCanvas(imagePosition.left, imagePosition.top);
   }

@@ -5,7 +5,7 @@ import screenTransitionController from './screenTransitionController.js';
 window.onload = () =>{
   uploadButton.bindToDomUploadButton();
   uploadButton.getHiddenFileBrowserInput().addEventListener("input", () => {
-    uploadButton.loadImage();
+    uploadButton.tryToLoadImage();
     screenTransitionController.setScreenToSave();
   });
 }

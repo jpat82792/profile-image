@@ -15,6 +15,10 @@ let drawNextFrame = ( xCoordinate, yCoordinate) =>{
   getCanvasContext().save();
 }
 
+let resetCanvas = () =>{
+  clearCanvas();
+}
+
 let clearCanvas = () =>{
   getCanvasContext().clearRect(0,0,
     getImageCanvas().width, getImageCanvas().height);
@@ -24,12 +28,12 @@ let clearCanvas = () =>{
 let getImageCanvas = ()=>{
   return document.querySelector('#image-editor');
 }
+
 let getCanvasContext = () =>{
-  
   return getImageCanvas().getContext("2d");
 }
 let getCanvasImage = () =>{
   return canvasImage;
 }
 
-export default {drawCanvas, getImageCanvas, canvasImage, getCanvasContext, getCanvasImage}
+export default {drawCanvas, getImageCanvas, canvasImage, getCanvasContext, getCanvasImage, resetCanvas}
