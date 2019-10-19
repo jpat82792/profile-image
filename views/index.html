@@ -12,14 +12,25 @@
          <span class="fas fa-question"></span>
        </button>
       </div>
-			<h1 class="guiding-header" role="banner status">
+			<h1 id="banner" class="banner" role="banner status">
         Upload a photo
       </h1>
       <section class="image-pane" role="group">
         <div class="container image-editor-container">
-          <canvas width="360" height="360" id="image-editor" class="image-editor" role="application" aria-label="Image cropper"
-          aria-label="Image cropper" aria-roledescription="Sample instructions on how to use">
-          </canvas>
+          <div class="image-editor">
+            <canvas width="360" height="360" id="image-editor"  role="application" aria-label="Image cropper"
+            aria-label="Image cropper" aria-roledescription="Sample instructions on how to use">
+            </canvas>
+            <svg class="overlay" viewbox="0 0 100 100" width="100%">
+              <defs>
+                <mask id="mask" x="0" y="0" width="80" height="30">
+                  <rect x="0" y="0" width="100" height="100" fill="#fff"/>
+                  <circle cx="50" cy="50" r="35" />
+                </mask>
+              </defs>
+              <rect x="0" y="0" width="100" height="100" mask="url(#mask)" fill-opacity="0.7"/>    
+            </svg>
+          </div>
           <div id="image-preview" class="image-preview" role="status" aria-label="Profile image preview">
           </div>
         </div>
@@ -54,6 +65,7 @@
       </section>
 		</section>
   </body>
+      <!--<script src="config/profile-configuration.json"></script>-->
       <script src="javascript/windowOnLoad.js" type="module"></script>
       <script src="javascript/screenTransitionController.js" type="module"></script>
       <script src="javascript/imageLoadingUtilities.js" type="module"></script>

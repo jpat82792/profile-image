@@ -46,7 +46,7 @@ $zoom-out-radius: $zoom-out-side/2;
 
 	}
 
-	.guiding-header{
+	.banner{
 		font-size:26px;
 		text-align:center;
 	}
@@ -88,7 +88,8 @@ $zoom-out-radius: $zoom-out-side/2;
     	height: 360px;
     	margin-left: auto;
     	justify-self: center;
-    	align-self: center;
+		align-self: center;
+		position:relative;
 
 	}
 
@@ -127,10 +128,6 @@ $zoom-out-radius: $zoom-out-side/2;
 		text-align:left;
 	}
 
-	.help-button{
-
-	}
-
 	.image-editor-container{
 	    display: flex;
     	flex-direction: row;
@@ -138,6 +135,12 @@ $zoom-out-radius: $zoom-out-side/2;
 
 	.hide-button{
 		display:none;
+	}
+
+	.overlay{
+		position:absolute;
+		width:360px;
+		left:0px;
 	}
 
 
