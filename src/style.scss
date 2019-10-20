@@ -79,7 +79,10 @@ $zoom-out-radius: $zoom-out-side/2;
 	    height:$preview-side;
 	    border-radius: $preview-radius;
 	    align-self: baseline;
-    	margin-left: auto;
+		margin-left: auto;
+		background-size: 140%;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 
 	.image-editor{

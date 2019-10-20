@@ -1,5 +1,6 @@
 'use strict';
 import canvasWrapper from './canvas.js';
+import imageSavingUtils from './imageSavingUtilities.js';
 
 const imageStartPosition = {left:0, top:0};
 let imagePosition = imageStartPosition;
@@ -39,6 +40,8 @@ let onMouseMove = (event)=>{
 let onMouseUp = (event)=>{
   isClicked = false;
   canvasWrapper.clipImageOut(imagePosition);
+  imageSavingUtils.moveImageToPreview();
+
 }
 
 let setPositions = (previousPosition, currentPosition) =>{

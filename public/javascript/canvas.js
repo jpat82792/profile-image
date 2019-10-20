@@ -33,6 +33,7 @@ let clipImage = (mousePosition) =>{
     canvasImage.height * zoomSlider.getScaleValue()
   );
   getCanvasContext().closePath();
+  getCanvasContext().save();
 }
 
 let resetCanvas = () =>{
