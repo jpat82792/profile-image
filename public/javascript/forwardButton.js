@@ -3,7 +3,6 @@ import imageEditor from './imageEditor.js';
 import canvasWrapper from './canvas.js';
 import imageLoadingUtilities from './imageLoadingUtilities.js';
 import screenTransitionController from './screenTransitionController.js';
-import zoomSlider from './zoomSlider.js';
 
 let performClick = (queryString) => {
    var elem = document.querySelector(queryString);
@@ -53,7 +52,7 @@ let tryToLoadImage = () =>{
     loadImage();
   }
   catch(error){
-    /*console.error(error);*/
+
   }
 }
 let loadImage = () =>{
@@ -73,5 +72,5 @@ canvasWrapper.getCanvasImage().onload = ()=>{
   screenTransitionController.setScreenToSave()
 }
 
-
-export default {getHiddenFileBrowserInput, tryToLoadImage, bindToDomUploadButton, changeForwardActionButtonText}
+export default {getHiddenFileBrowserInput, tryToLoadImage, 
+  bindToDomUploadButton, changeForwardActionButtonText}

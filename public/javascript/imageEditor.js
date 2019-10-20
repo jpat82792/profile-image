@@ -14,11 +14,12 @@ let setImageEditorListeners = () =>{
       onMouseMove(event);
   });
   window.addEventListener('mouseup', (event)=>{
-      onMouseUp();
+      onMouseUp(event);
   });
 }
 
 let onMouseDown = (event) =>{
+  console.log("mouseDown");
   let mousePosition = getMousePosition(event);
   setPositions(mousePosition, mousePosition);
   canvasWrapper.drawCanvas(imagePosition.left, imagePosition.top);
@@ -26,15 +27,18 @@ let onMouseDown = (event) =>{
 }
 
 let onMouseMove = (event)=>{
+  
   if(isClicked){
+    console.log("mouseMove");
       let mousePosition = getMousePosition(event);
       setPositions(imagePosition, mousePosition);
       canvasWrapper.drawCanvas(imagePosition.left, imagePosition.top);
   }
 }
 
-let onMouseUp = ()=>{
+let onMouseUp = (event)=>{
   isClicked = false;
+  canvasWrapper.clipImageOut(imagePosition);
 }
 
 let setPositions = (previousPosition, currentPosition) =>{
@@ -46,7 +50,6 @@ let setPreviousPosition = (mousePosition)=>{
   previousPosition = {left:Math.round(mousePosition.x),
       top: Math.round(mousePosition.y)
   };
-
 }
 
 let setImagePosition = (mousePosition)=>{
